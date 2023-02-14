@@ -67,7 +67,7 @@ function Stream(props) {
             })
             .catch(err => {
                 console.log(err);
-                //ServerAlert();
+                updateWatchServer();
             });
 
         searchInfo(type, id)
@@ -79,27 +79,73 @@ function Stream(props) {
             });
     }, []);
 
-    function stream(server = 'upcloud') {
+    function updateWatchServer() {
+        swal(
+            "Oops",
+            "Please select server.",
+            "warning",
+            {
+                buttons: {
+                    mixdrop: "mixdrop",
+                    vidcloud: "vidcloud",
+                    upcloud: "upcloud",
+                },
+            }
+        ).then((value) => {
+            streaming(episodeId, type, id, value)
+                .then(response => {
 
+                    setWatch(response.data);
+
+                    let qualityvid = [];
+                    for (var i = 0; i < response.data.sources.length; i++) {
+                        var q = response['data']['sources'][i]['quality'];
+                        var url = response['data']['sources'][i]['url'];
+                        if (q == 'auto') {
+                            qualityvid[i] = {
+                                default: true,
+                                html: q,
+                                url: url
+                            }
+                        } else {
+                            qualityvid[i] = {
+                                html: q,
+                                url: url
+                            }
+                        }
+                    }
+                    setQuality(qualityvid);
+
+                    let sub = [];
+                    let selectedsubtitle = {};
+                    for (var i = 0; i < response.data.subtitles.length; i++) {
+                        if (i == 0) {
+                            sub[i] = {
+                                default: true,
+                                html: response.data.subtitles[i]['lang'],
+                                url: response.data.subtitles[i]['url']
+                            }
+                            selectedsubtitle = {
+                                lang: response.data.subtitles[i]['lang'],
+                                url: response.data.subtitles[i]['url'],
+                            };
+                        } else {
+                            sub[i] = {
+                                default: false,
+                                html: response.data.subtitles[i]['lang'],
+                                url: response.data.subtitles[i]['url']
+                            }
+                        }
+
+                    }
+                    setVidsubtitle(sub);
+                })
+                .catch(err => {
+                    console.log(err);
+                    updateWatchServer();
+                });
+        });
     }
-
-    // const ServerAlert = () => {
-    //     swal(
-    //         "Oops",
-    //         "Please select server.",
-    //         "warning",
-    //         {
-    //             buttons: {
-    //                 mixdrop: "mixdrop",
-    //                 vidcloud: "vidcloud",
-    //                 upcloud: "upcloud",
-    //             },
-    //         }
-    //     ).then((value) => {
-    //         stream(value);
-    //         console.log(value);
-    //     });
-    // }
 
     const playM3u8 = (video, url, art) => {
         if (Hls.isSupported()) {
@@ -152,7 +198,7 @@ function Stream(props) {
                                 container: '.artplayer-app',
                                 title: vidinfo.title,
                                 poster: vidinfo.image,
-                                url: watch.length != 0 ? 'http://cors.consumet.stream/' + watch['sources'][0]['url'] : '',
+                                url: watch.length != 0 ? 'https://cors.consumet.stream/' + watch['sources'][0]['url'] : '',
                                 type: 'm3u8',
                                 theme: 'red',
                                 quality: quality,

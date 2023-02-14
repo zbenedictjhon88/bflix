@@ -9,6 +9,6 @@ export function searchInfo(type, id) {
     return axios.get(apiConfig.based_url + 'movies/flixhq/info?id=' + type + '/' + id);
 }
 
-export function streaming(episodeId, type, id, server = 'vidcloud') {
-    return axios.get('http://cors.consumet.stream/' + apiConfig.based_url + 'movies/flixhq/watch?episodeId=' + episodeId + '&mediaId=' + type + '/' + id + '&server=' + server);
+export function streaming(episodeId, type, id, server = 'upcloud') {
+    return axios.get(apiConfig.based_url + 'movies/flixhq/watch?episodeId=' + episodeId + '&mediaId=' + type + '/' + id + '&server=' + server);
 }
