@@ -15,7 +15,7 @@ function NavBar(props) {
     return (
         <nav class="navbar navbar-expand-lg sticky-top">
             <div class="container">
-                <a class="navbar-brand" href="#">BLIX</a>
+                <a class="navbar-brand" href="#">BFLIX</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
