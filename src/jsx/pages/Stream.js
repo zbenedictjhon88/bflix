@@ -17,11 +17,7 @@ function Stream(props) {
     const [vidinfo, setVidInfo] = useState([]);
 
     useEffect(() => {
-        stream();
-    }, []);
-
-    function stream(server = 'upcloud') {
-        streaming(episodeId, type, id, server)
+        streaming(episodeId, type, id)
             .then(response => {
 
                 setWatch(response.data);
@@ -71,7 +67,7 @@ function Stream(props) {
             })
             .catch(err => {
                 console.log(err);
-                ServerAlert();
+                //ServerAlert();
             });
 
         searchInfo(type, id)
@@ -81,25 +77,29 @@ function Stream(props) {
             .catch(err => {
                 console.log(err)
             });
+    }, []);
+
+    function stream(server = 'upcloud') {
+
     }
 
-    const ServerAlert = () => {
-        swal(
-            "Oops",
-            "Please select server.",
-            "warning",
-            {
-                buttons: {
-                    mixdrop: "mixdrop",
-                    vidcloud: "vidcloud",
-                    upcloud: "upcloud",
-                },
-            }
-        ).then((value) => {
-            stream(value);
-            console.log(value);
-        });
-    }
+    // const ServerAlert = () => {
+    //     swal(
+    //         "Oops",
+    //         "Please select server.",
+    //         "warning",
+    //         {
+    //             buttons: {
+    //                 mixdrop: "mixdrop",
+    //                 vidcloud: "vidcloud",
+    //                 upcloud: "upcloud",
+    //             },
+    //         }
+    //     ).then((value) => {
+    //         stream(value);
+    //         console.log(value);
+    //     });
+    // }
 
     const playM3u8 = (video, url, art) => {
         if (Hls.isSupported()) {
