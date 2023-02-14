@@ -1,0 +1,39 @@
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+        margin-left: 0;
+    }
+    header input, header button {
+        display: none;
+    }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .sidebar {
+        display: none;
+        /* background-color: white;
+        width: 300px;
+        box-shadow: 1.5px 1.5px 5px gray; */
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+        margin-left: 0;
+    }
+}
