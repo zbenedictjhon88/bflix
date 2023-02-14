@@ -46,6 +46,9 @@ label {
 }
 
 /* added css */
+.main {
+    padding-bottom: 100px;
+}
 .banner {
     background-size: cover;
     width: 100%;
@@ -84,4 +87,21 @@ label {
 .info-img {
     width: 250px;
     box-shadow: 1.5px 1.5px 10px gray;
+}
+
+.info {
+    text-align: justify;
+}
+
+.info table {
+    font-size: 14px;
+}
+
+.info .detail {
+    width: 120px;
+}
+
+.link-side {
+    text-decoration: none;
+    color: black;
 }

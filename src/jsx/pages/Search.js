@@ -27,7 +27,7 @@ function Search(props) {
     let html = (
         <>
             <CustomBanner />
-            <div className='container banner-bottom'>
+            <div className='container' style={{marginTop: '-250px'}}>
                 <div className='row'>
                     <div className='col-lg-12'>
                         <h3 className='header-title'>Search: {id}</h3>
