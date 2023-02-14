@@ -75,8 +75,6 @@ function Info(props) {
                                 </tr>
                             </tbody>
                         </table>
-
-
                     </div>
                     <div className='col-lg-3'>
                         {vidinfo.length != 0 ? vidinfo.episodes.map((data, i) => {
@@ -100,7 +98,6 @@ function Info(props) {
                     }) : ''}
                 </div>
             </div>
-
         </>
     );
 

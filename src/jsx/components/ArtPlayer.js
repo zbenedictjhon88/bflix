@@ -9,6 +9,7 @@ export default function Player({ option, getInstance, ...rest }) {
             {
                 ...option,
                 container: artRef.current,
+                autoOrientation: true,
             },
         );
 

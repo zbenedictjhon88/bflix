@@ -11,6 +11,7 @@ label {
 
 .navbar {
     background-color: white;
+    box-shadow: 1.5px 1.5px 5px gray;
 }
 
 .navbar .navbar-brand {
@@ -31,6 +32,7 @@ label {
 }
 
 .card img {
+    object-fit: cover;
     height: 280px;
     border-radius: 5px;
     box-shadow: 1.5px 1.5px 10px gray;
@@ -49,6 +51,7 @@ label {
 .main {
     padding-bottom: 100px;
 }
+
 .banner {
     background-size: cover;
     width: 100%;
@@ -82,15 +85,19 @@ label {
     width: 100%;
     height: 500px;
     box-shadow: 1.5px 1.5px 10px gray;
+    object-fit: cover;
+    background-image: linear-gradient(white, gray);
 }
 
 .info-img {
     width: 250px;
+    height: 380px;
+    object-fit: cover;
     box-shadow: 1.5px 1.5px 10px gray;
 }
 
 .info {
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 .info table {
@@ -104,4 +111,12 @@ label {
 .link-side {
     text-decoration: none;
     color: black;
+}
+
+.loading{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 50px;
+    padding-bottom: 10px;
 }
