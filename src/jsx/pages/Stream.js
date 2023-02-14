@@ -253,7 +253,7 @@ function Stream(props) {
                     </div>
                     {vidinfo.length != 0 ? vidinfo.recommendations.map((data, i) => {
                         return (
-                            <CustomCard key={i} url={'info/' + data.id} image={data.image} title={data.title} type={data.type} />
+                            <CustomCard key={i} url={'/info/' + data.id} image={data.image} title={data.title} type={data.type} />
                         );
                     }) : ''}
                 </div>
