@@ -20,6 +20,28 @@ label {
     font-family: 'BIZ UDPMincho', serif;
 }
 
+/* swal css custom */
+.swal-footer {
+    text-align: center;
+    background-color: rgb(245, 248, 250);
+    margin-top: 32px;
+    border-top: 1px solid #E9EEF1;
+    overflow: hidden;
+}
+
+.swal-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: red;
+    font-size: 12px;
+    border: none;
+    box-shadow: 1.5px 1.5px 5px gray;
+}
+
+.swal-button:hover {
+    background-color: orangered !important;
+}
+
 .card {
     margin: 5px;
     padding: 0;
@@ -96,10 +118,6 @@ label {
     box-shadow: 1.5px 1.5px 10px gray;
 }
 
-.info {
-    /* text-align: justify; */
-}
-
 .info table {
     font-size: 14px;
 }
@@ -113,7 +131,7 @@ label {
     color: black;
 }
 
-.loading{
+.loading {
     position: absolute;
     bottom: 0;
     right: 0;

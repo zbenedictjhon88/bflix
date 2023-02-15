@@ -21,6 +21,9 @@ export default function Player({ option, getInstance, ...rest }) {
             if (art && art.destroy) {
                 art.destroy(false);
             }
+            art.on('url', (url) => {
+                console.info('url', url);
+            })
         };
     }, []);
 

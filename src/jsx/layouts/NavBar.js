@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { BsFillHouseDoorFill, BsFillDisplayFill, BsFillCameraReelsFill, BsFillCupFill, BsFillStarFill } from "react-icons/bs";
 
 function NavBar(props) {
 
@@ -13,9 +14,10 @@ function NavBar(props) {
     }
 
     return (
-        <nav class="navbar navbar-expand-lg sticky-top">
+        <nav class="navbar navbar-expand-xl sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="#">BFLIX</a>
+                <small>BETA</small>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -23,22 +25,28 @@ function NavBar(props) {
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <Link className='nav-link' to='/'>
-                                <i className="fa fa-home fa-fw"></i> Home
+                                <BsFillHouseDoorFill />
+                                Home
                             </Link>
                         </li>
                         <li class="nav-item">
                             <Link className='nav-link' to='/search/movie'>
-                                <i className="fa fa-ticket fa-fw"></i> Movies
+                                <BsFillCameraReelsFill /> Movies
                             </Link>
                         </li>
                         <li class="nav-item">
                             <Link className='nav-link' to='/search/tv show'>
-                                <i className="fa fa-tv fa-fw"></i> TV Shows
+                                <BsFillDisplayFill /> TV Shows
                             </Link>
                         </li>
                         <li class="nav-item">
                             <Link className='nav-link' to='/'>
-                                <i className="fa fa-star fa-fw"></i> Animes
+                                <BsFillCupFill /> Animes
+                            </Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link className='nav-link' to='/search/asian'>
+                                <BsFillStarFill /> Asian Drama
                             </Link>
                         </li>
                         <li class="nav-item dropdown">

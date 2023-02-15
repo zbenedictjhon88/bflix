@@ -10,15 +10,20 @@ import Search from "./pages/Search";
 import Info from "./pages/Info";
 import Stream from "./pages/Stream";
 import NavBar from "./layouts/NavBar";
+import HInfo from "./pages/HInfo";
+import DInfo from "./pages/DInfo";
+import HStream from "./pages/HStream";
+import DStream from "./pages/DStream";
 
 const Markup = (props) => {
 
     const routes = [
         { url: "", element: <Home /> },
         { url: "search/:id", element: <Search /> },
-        // { url: "?search=:id", element: <Search /> },
-        { url: "info/:type/:id", element: <Info /> },
-        { url: "stream/:episodeId/:type/:id", element: <Stream /> },
+        { url: "hinfo/:type/:id", element: <HInfo /> },
+        { url: "dinfo/:type/:id", element: <DInfo /> },
+        { url: "hstream/:episodeId/:type/:id", element: <HStream /> },
+        { url: "dstream/:episodeId/:type/:id", element: <DStream /> },
         // { url: "error-404", component: Error404 },
     ];
 
