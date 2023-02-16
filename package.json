@@ -11,6 +11,7 @@
     "bootstrap": "^5.2.3",
     "hls.js": "^1.3.2-0.canary.8870",
     "react": "^18.2.0",
+    "react-adsense": "^0.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-loading": "^2.0.3",

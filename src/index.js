@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import AdSense from 'react-adsense';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -15,6 +16,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <div>
+      <AdSense.Google
+        client='ca-pub-5354629759396987'
+        slot='7806394673'
+        style={{ display: 'none' }}
+        format='auto'
+        responsive='true'
+        layoutKey='-gw-1+2a-9x+5c'
+      />
+    </div>
   </React.StrictMode>
 );
 
