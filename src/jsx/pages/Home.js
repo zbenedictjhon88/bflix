@@ -16,7 +16,7 @@ function Home(props) {
         }).catch(err => {
             console.log(err);
         })
-    }, [movieSearch]);
+    }, []);
 
     let html = (
         <>

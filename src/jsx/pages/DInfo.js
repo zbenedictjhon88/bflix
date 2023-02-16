@@ -17,7 +17,7 @@ function DInfo(props) {
         }).catch(err => {
             console.log(err);
         });
-    }, [movieSearchInfo, type, id]);
+    }, [type, id]);
 
 
     let html = (

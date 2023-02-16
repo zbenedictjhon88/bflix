@@ -25,7 +25,7 @@ function Search(props) {
     function movieLoad(value) {
         movieSearch(value, page, 'flixhq').then(res => {
             if (res.length == 0) {
-                messageAlert();
+                //messageAlert();
                 return false;
             }
 
@@ -36,7 +36,7 @@ function Search(props) {
 
         movieSearch(value, page, 'dramacool').then(res => {
             if (res.length == 0) {
-                messageAlert();
+                //messageAlert();
                 return false;
             }
 
@@ -47,13 +47,22 @@ function Search(props) {
     }
 
     function messageAlert() {
-        swal({
-            title: "Oops!",
-            text: "Search Not Found. Try another title.",
-            icon: "warning",
-            dangerMode: true,
-            closeOnClickOutside: false
-        })
+
+        swal("Write something here:", {
+            content: "input",
+        }).then((value) => {
+            swal(`You typed: ${value}`);
+        });
+        // swal({
+        //     title: "Oops!",
+        //     text: "Search Not Found. Try another title.",
+        //     icon: "warning",
+        //     dangerMode: true,
+        //     closeOnClickOutside: false,
+        //     content: "input"
+        // }).then(val => {
+        //     alert(val);
+        // })
     }
 
     function prevbtn(e) {
