@@ -8,7 +8,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         border: none;
-        background-color: black;
+        /* background-color: black; */
     }
 
     .card img {
