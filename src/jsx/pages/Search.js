@@ -90,7 +90,7 @@ function Search(props) {
                             <CustomCard key={i} url={'/dinfo/' + data.id + '/' + pageno} image={data.image} title={data.title} type='Asian Drama' />
                         );
                     })}
-                    <div className='col-lg-12 text-center' style={{ marginTop: '50px' }}>
+                    <div className='col-lg-12 text-center' style={{ marginTop: '50px', marginBottom: '50px' }}>
                         <button onClick={prevbtn} className='btn btn-default'>
                             <BsChevronDoubleLeft />
                         </button>

@@ -1,4 +1,8 @@
 /* custom css */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
 p {
     font-size: 14px;
     margin: 0;
@@ -72,7 +76,7 @@ label {
 
 /* added css */
 .main {
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
 }
 
 .banner {
@@ -202,4 +206,56 @@ label {
 .icon {
     margin: 5px;
     cursor: pointer;
+}
+
+.about-banner {
+    margin: 0;
+    padding-top: 150px;
+    padding-bottom: 170px;
+    background-position: center;
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.about-banner h3 {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+.about-banner p {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.about-banner ul {
+    color: white;
+    margin-bottom: 20px;
+}
+.about-banner ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer {
+    box-shadow: 1.5px 1.5px 5px gray;
+    background-color: #97232ffc;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: white;
+}
+.footer ul {
+    margin: 0;
+    text-align: center;
+}
+.footer ul  li{
+    list-style-type: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    display:inline
+}
+.footer ul li a {
+    text-decoration: none;
+    color: white;
 }

@@ -1,7 +1,38 @@
-@media (max-width: 400px) {
+@media (max-width: 370px) {
+    .card {
+        margin: 5px auto;
+        padding: 0;
+        width: 180px;
+        height: 340px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: none;
+        background-color: black;
+    }
+
+    .card img {
+        object-fit: cover;
+        height: 280px;
+        border-radius: 5px;
+        box-shadow: 1.5px 1.5px 10px gray;
+    }
+
+    .card .card-footer {
+        padding: 5px;
+    }
+
+    .card .card-footer p {
+        margin: 0;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
     body {
         margin: 0 !important;
     }
+
     .sign .sign-form {
         width: 500px;
         top: 0;
@@ -13,38 +44,40 @@
         padding-right: 20px;
         box-shadow: 5px 5px 50px black;
     }
-    
+
     .sign .sign-form form {
         margin: 50% auto;
         text-align: center;
     }
-    
+
     .sign .sign-form form .sign-logo {
         height: 100px;
         margin-bottom: 50px;
     }
-    
+
     .sign .sign-form form .form-control {
         height: 50px;
         margin-bottom: 10px;
+        background-color: transparent;
     }
-    
+
     .sign .sign-form form .d-grid {
         margin-top: 20px;
     }
-    
+
     .sign .sign-form form .d-grid>.btn {
         height: 50px;
         margin-bottom: 5px;
         font-size: 12px;
     }
-    
+
     .sign .sign-form p {
         margin-top: 50px;
         text-align: center;
         font-size: 12px;
+        color: white;
     }
-    
+
     .sign .sign-form p .sign-link {
         margin-left: 10px;
         text-decoration: none;
