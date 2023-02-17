@@ -45,10 +45,10 @@ const Markup = (props) => {
                             element={data.element}
                         />
                     ))}
-                    {/* <Route
+                    <Route
                         path="*"
                         element={<Navigate to="/" replace />}
-                    /> */}
+                    />
                 </Routes>
             </div>
         </>
