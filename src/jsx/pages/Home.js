@@ -13,7 +13,7 @@ function Home(props) {
 
     useEffect(() => {
         movieSearch('latest movies').then(res => {
-            setVideo(res);
+            setVideo(res.results);
         }).catch(err => {
             console.log(err);
         })
@@ -28,17 +28,17 @@ function Home(props) {
                     <div className='col-lg-12'>
                         <h3 className='header-title'>Latest Movies</h3>
                     </div>
-                    {video.map((data, i) => {
+                    {video.length != 0 ? video.map((data, i) => {
                         return (
                             <CustomCard
                                 key={i}
-                                url={'hinfo/' + data.id}
+                                url={'hinfo/' + data.id + '/' + 1}
                                 image={data.image}
                                 title={data.title}
                                 type={data.type}
                             />
                         );
-                    })}
+                    }) : ''}
                 </div>
             </div>
         </>

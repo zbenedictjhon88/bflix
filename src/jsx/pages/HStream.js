@@ -230,7 +230,11 @@ function HStream(props) {
                                     <td>
                                         {vidinfo.length != 0 ? vidinfo.genres.map((data, i) => {
                                             var genre = vidinfo.genres.length != i + 1 ? data + ', ' : data;
-                                            return (<>{genre}</>);
+                                            return (
+                                                <>
+                                                    <p key={i}>{genre}</p>
+                                                </>
+                                            );
                                         }) : ''}
                                     </td>
                                 </tr>
@@ -247,7 +251,11 @@ function HStream(props) {
                                     <td>
                                         {vidinfo.length != 0 ? vidinfo.casts.map((data, i) => {
                                             var cast = vidinfo.casts.length != i + 1 ? data + ', ' : data;
-                                            return (<>{cast}</>);
+                                            return (
+                                                <>
+                                                    <p key={i}>{cast}</p>
+                                                </>
+                                            );
                                         }) : ''}
                                     </td>
                                 </tr>
@@ -256,7 +264,11 @@ function HStream(props) {
                                     <td>
                                         {vidinfo.length != 0 ? vidinfo.tags.map((data, i) => {
                                             var tag = vidinfo.tags.length != i + 1 ? data + ' ' : data;
-                                            return (<>{tag}</>);
+                                            return (
+                                                <>
+                                                    <p key={i}>{tag}</p>
+                                                </>
+                                            );
                                         }) : ''}
                                     </td>
                                 </tr>

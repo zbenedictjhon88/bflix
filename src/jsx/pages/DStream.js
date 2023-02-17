@@ -25,12 +25,10 @@ function DStream(props) {
 
         movieSearchInfo(type, id, 'dramacool').then(v => {
             setVidInfo(v);
-            console.log(vidinfo);
         });
 
         movieStream(episodeId, type, id, 'dramacool', server).then(w => {
             if (w['status']) {
-                console.log(w);
                 setWatch(w.data);
 
                 let qvid = [];
@@ -112,7 +110,6 @@ function DStream(props) {
                 }
             ).then((value) => {
                 setTryCount(trycount + 1);
-                console.log(trycount);
                 streaming(value);
 
             });
@@ -241,12 +238,16 @@ function DStream(props) {
                                     <td>
                                         {vidinfo.length != 0 ? vidinfo.otherNames.map((data, i) => {
                                             var otherNames = vidinfo.otherNames.length != i + 1 ? data + ', ' : data;
-                                            return (<>{otherNames}</>);
+                                            return (
+                                                <>
+                                                    <p key={i}>{otherNames}</p>
+                                                </>
+                                            );
                                         }) : ''}
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>    
+                        </table>
                     </div>
                 </div>
             </div>

@@ -16,18 +16,18 @@ const Markup = (props) => {
 
     const [isLogged, setLogged] = useState(authentication);
 
-    useEffect(() => {
-        // signout();
-        // removeCookie('isLogged');
-        // setCookie('isLogged', true);
-        console.log('authentication');
-    }, []);
+    // useEffect(() => {
+    //     // signout();
+    //     // removeCookie('isLogged');
+    //     // setCookie('isLogged', true);
+    //     console.log('authentication');
+    // }, []);
 
     const routes = [
         { url: "", element: <Home /> },
-        { url: "search/:id", element: <Search /> },
-        { url: "hinfo/:type/:id", element: <HInfo /> },
-        { url: "dinfo/:type/:id", element: <DInfo /> },
+        { url: "search/:id/:pageno", element: <Search /> },
+        { url: "hinfo/:type/:id/:pageno", element: <HInfo /> },
+        { url: "dinfo/:type/:id/:pageno", element: <DInfo /> },
         { url: "hstream/:episodeId/:type/:id", element: <HStream /> },
         { url: "dstream/:episodeId/:type/:id", element: <DStream /> },
     ];
@@ -45,19 +45,13 @@ const Markup = (props) => {
                             element={data.element}
                         />
                     ))}
-                    <Route
+                    {/* <Route
                         path="*"
                         element={<Navigate to="/" replace />}
-                    />
+                    /> */}
                 </Routes>
             </div>
         </>
-    );
-
-    let unauthenticate = (
-        <Routes>
-            <Route exact={true} path='/login' element={<SignIn />} />
-        </Routes>
     );
 
     return (

@@ -89,5 +89,5 @@ export const signOutGoogleAccount = () => {
         console.log(error);
     });
 
-    window.location.replace('/login');
+    window.location.replace('/sign-in');
 }

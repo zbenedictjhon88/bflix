@@ -20,10 +20,10 @@ function App() {
     <Routes>
       <Route exact={true} path='/sign-in' element={<SignIn />} />
       <Route exact={true} path='/sign-up' element={<SignUp />} />
-      <Route
+      {/* <Route
         path="*"
         element={<Navigate to="/sign-in" replace />}
-      />
+      /> */}
     </Routes>
   );
 

@@ -4,7 +4,7 @@ import apiConfig from '../config/api.config';
 export async function movieSearch(value, page = 1, from = 'flixhq') {
     try {
         const response = await axios.get(apiConfig.based_url + 'movies/' + from + '/' + value + '?page=' + page);
-        return response.data.results;
+        return response.data;
     } catch (error) {
         return error;
     }

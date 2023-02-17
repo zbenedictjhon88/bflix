@@ -16,7 +16,7 @@ function SignIn(props) {
 
     function login(e) {
         e.preventDefault();
-       
+
         let error = false;
         const errorObj = { ...errorsObj };
 
@@ -34,14 +34,14 @@ function SignIn(props) {
             swal('Oops', 'Please log your credential. Thank You!', 'warning');
             return;
         }
-
+        console.log('tet');
         signInEmailPassword(email, password);
-    } 
+    }
 
     function loginGoogleAccoun(e) {
         e.preventDefault();
         signInGoogleAccount();
-    } 
+    }
 
     return (
         <>
@@ -74,14 +74,15 @@ function SignIn(props) {
                                 Sign In with Google
                             </button>
                         </div>
+
+                        <p>
+                            Don't have an Account?
+                            <Link to="/sign-up" className='sign-link'>
+                                Sign Up
+                            </Link>
+                        </p>
                     </form>
 
-                    <p>
-                        Don't have an Account? 
-                        <Link to="/sign-up" className='sign-link'>
-                            Sign Up
-                        </Link>
-                    </p>
                 </div>
             </div>
         </>

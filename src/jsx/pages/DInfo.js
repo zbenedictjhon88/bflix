@@ -10,7 +10,6 @@ function DInfo(props) {
 
     useEffect(() => {
         movieSearchInfo(type, id, 'dramacool').then(res => {
-            console.log(res)
             setVidInfo(res);
         }).catch(err => {
             console.log(err);

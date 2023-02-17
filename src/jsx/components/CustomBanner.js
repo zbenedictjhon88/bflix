@@ -1,10 +1,10 @@
-import banner from '../../assets/images/img-1.jpg';
+import banner from '../../assets/images/banner.png';
 
 function CustomBanner(props) {
     return (
         <>
             <img src={banner} className="banner" />
-            <div className="banner-gradient"></div>
+            {/* <div className="banner-gradient"></div> */}
         </>
     )
 }

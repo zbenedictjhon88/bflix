@@ -9,71 +9,67 @@ import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
 
 function Search(props) {
 
-    let { id } = useParams();
+    let { id, pageno } = useParams();
     const navigate = useNavigate();
     const [video, setVideo] = useState([]);
 
     const [page, setPage] = useState(1);
     const [flixhq, setFlixhq] = useState([]);
     const [dramacool, setDramacool] = useState([]);
+    const [fhasNextPage, setFhasNextPage] = useState(true);
+    const [dhasNextPage, setDhasNextPage] = useState(true);
 
     useEffect(() => {
         movieLoad(id);
     }, [id, prevbtn, nextbtn]);
 
     function movieLoad(value) {
-        movieSearch(value, page, 'flixhq').then(res => {
-            if (res.length == 0) {
-                //messageAlert();
-                return false;
-            }
+        if (fhasNextPage) {
+            movieSearch(value, pageno, 'flixhq').then(res => {
+                if (res.length == 0) {
+                    //messageAlert();
+                    return false;
+                }
 
-            setFlixhq(res);
-        }).catch(err => {
-            console.log(err)
-        });
+                setFlixhq(res.results);
+                setFhasNextPage(res.hasNextPage)
+            }).catch(err => {
+                console.log(err)
+            });
+        }
 
-        movieSearch(value, page, 'dramacool').then(res => {
-            if (res.length == 0) {
-                //messageAlert();
-                return false;
-            }
+        if (dhasNextPage) {
+            movieSearch(value, pageno, 'dramacool').then(res => {
+                if (res.length == 0) {
+                    //messageAlert();
+                    return false;
+                }
 
-            setDramacool(res);
-        }).catch(err => {
-            console.log(err)
-        });
-    }
-
-    function messageAlert() {
-
-        swal("Write something here:", {
-            content: "input",
-        }).then((value) => {
-            swal(`You typed: ${value}`);
-        });
-        // swal({
-        //     title: "Oops!",
-        //     text: "Search Not Found. Try another title.",
-        //     icon: "warning",
-        //     dangerMode: true,
-        //     closeOnClickOutside: false,
-        //     content: "input"
-        // }).then(val => {
-        //     alert(val);
-        // })
+                setDramacool(res.results);
+                setDhasNextPage(res.hasNextPage)
+            }).catch(err => {
+                console.log(err)
+            });
+        }
     }
 
     function prevbtn(e) {
         e.preventDefault();
-        if (page > 1) {
-            setPage(page - 1);
+        if (fhasNextPage == true || dhasNextPage == true) {
+            if (page > 1) {
+                setPage(page - 1);
+                navigate('/search/' + id + '/' + page);
+            }
         }
+
     }
 
     function nextbtn(e) {
         e.preventDefault();
-        setPage(page + 1);
+        if (fhasNextPage == true || dhasNextPage == true) {
+            setPage(page + 1);
+            navigate('/search/' + id + '/' + page);
+        }
     }
 
     let html = (
@@ -86,19 +82,19 @@ function Search(props) {
                     </div>
                     {flixhq.map((data, i) => {
                         return (
-                            <CustomCard key={i} url={'/hinfo/' + data.id} image={data.image} title={data.title} type={data.type} />
+                            <CustomCard key={i} url={'/hinfo/' + data.id + '/' + pageno} image={data.image} title={data.title} type={data.type} />
                         );
                     })}
                     {dramacool.map((data, i) => {
                         return (
-                            <CustomCard key={i} url={'/dinfo/' + data.id} image={data.image} title={data.title} type='Asian Drama' />
+                            <CustomCard key={i} url={'/dinfo/' + data.id + '/' + pageno} image={data.image} title={data.title} type='Asian Drama' />
                         );
                     })}
                     <div className='col-lg-12 text-center' style={{ marginTop: '50px' }}>
                         <button onClick={prevbtn} className='btn btn-default'>
                             <BsChevronDoubleLeft />
                         </button>
-                        {page}
+                        {pageno}
                         <button onClick={nextbtn} className='btn btn-default'>
                             <BsChevronDoubleRight />
                         </button>

@@ -17,7 +17,7 @@ function NavBar(props) {
         }).then((value) => {
             console.log(value);
             if (value != '') {
-                return navigate('search/' + value);
+                return navigate('search/' + value + '/' + 1);
             }
         });
     }
@@ -46,17 +46,17 @@ function NavBar(props) {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className='nav-link' to='/search/movie'>
+                            <Link className='nav-link' to='/search/movie/1'>
                                 Movies
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className='nav-link' to='/search/tv show'>
+                            <Link className='nav-link' to='/search/tv show/1'>
                                 TV Shows
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className='nav-link' to='/search/asian'>
+                            <Link className='nav-link' to='/search/asian/1'>
                                 Asian Drama
                             </Link>
                         </li>
