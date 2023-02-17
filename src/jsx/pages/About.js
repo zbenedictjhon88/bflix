@@ -14,7 +14,7 @@ function About(props) {
                             </p>
                             <p>
                                 We have a vast library of movies and TV shows from around the world,
-                                with new content added regularly. Our website uses state-of-the-art streaming technology to
+                                with new content added regularly. Our BFLIX Stream uses state-of-the-art streaming technology to
                                 ensure that you can watch your favorite shows and movies in high quality.
                             </p>
                             <p>

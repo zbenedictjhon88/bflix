@@ -85,6 +85,18 @@ function SignUp(props) {
                                 Sign In
                             </Link>
                         </p>
+
+                        <p style={{ marginTop: '5px' }}>
+                            <Link to="/about" className='sign-link'>
+                                About
+                            </Link>
+                            <Link to="/user-agreement" className='sign-link'>
+                                Terms of Service
+                            </Link>
+                            <Link to="/privacy-policy" className='sign-link'>
+                                Privacy Policy
+                            </Link>
+                        </p>
                     </form>
 
                 </div>

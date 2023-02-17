@@ -8,25 +8,30 @@ function Privacy(props) {
                         <div className="col-lg-6 col-md-8">
                             <h3>Privacy Policy</h3>
                             <p>
-                                BFLIX Stream is a platform where users can access a wide variety of media content,
-                                including movies, TV shows, documentaries, and other videos. BFLIX Stream offers a
-                                user-friendly interface that makes it easy to navigate and find the content that you're interested in.
+                                Welcome to our BFLIX Stream.
+                                We respect your privacy and are committed to protecting your personal information.
+                                This Privacy Policy explains how we collect, use, and share your information when you use our BFLIX Stream.
                             </p>
-                            <p>
-                                We have a vast library of movies and TV shows from around the world,
-                                with new content added regularly. Our website uses state-of-the-art streaming technology to
-                                ensure that you can watch your favorite shows and movies in high quality.
-                            </p>
-                            <p>
-                                Whether you're in the mood for a classic movie, the latest blockbuster,
-                                or binge-watching your favorite TV series, BFLIX Stream has you covered.
-                                Our content is available on-demand, so you can watch what you want, when you want.
-                            </p>
-                            <p>
-                                We are committed to providing an exceptional streaming experience to our
-                                users, and we are constantly improving and updating our website to make it even
-                                better. With BFLIX Stream, you can enjoy the best in entertainment from the comfort of your own home.
-                            </p>
+                            <ul>
+                                <li>
+                                    Information We Collect: We may collect personal information such as your name, and email address,
+                                    when you sign up for our BFLIX Stream. We may also collect information about
+                                    your use of our BFLIX Stream, such as your IP address, browser type, and device type.
+                                </li>
+                                <li>
+                                    Data Security: We take reasonable measures to protect your
+                                    personal information from unauthorized access, disclosure, and destruction.
+                                </li>
+                                <li>
+                                    Changes to Privacy Policy: We may change this Privacy Policy at any
+                                    time and without notice. Your continued use of our website after any changes to this
+                                    Privacy Policy constitutes your acceptance of the new policy.
+                                </li>
+                                <li>
+                                    Contact Us: If you have any questions or concerns about
+                                    this Privacy Policy, please contact us at bflixstream@gmail.com.
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
