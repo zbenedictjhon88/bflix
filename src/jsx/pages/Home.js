@@ -1,9 +1,10 @@
-import { search } from '../../services/SearchService';
 import React, { useEffect, useState } from 'react';
+
 import Loading from './Loading';
 import CustomBanner from '../components/CustomBanner';
 import CustomCard from '../components/CustomCard';
 import SEO from '../../common/SEO';
+
 import { movieSearch } from '../../services/MovieSearchService';
 
 function Home(props) {
@@ -20,6 +21,7 @@ function Home(props) {
 
     let html = (
         <>
+            <SEO title="Home" />
             <CustomBanner />
             <div className='container' style={{ marginTop: '-250px' }}>
                 <div className='row'>

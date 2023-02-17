@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { movieSearchInfo } from '../../services/MovieSearchService';
-import { searchInfo } from '../../services/SearchService';
 import CustomCard from '../components/CustomCard';
 import Loading from './Loading';
 

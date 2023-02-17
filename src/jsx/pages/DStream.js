@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { searchInfo, streaming } from "../../services/SearchService";
 import Player from "../components/ArtPlayer";
 import Loading from "./Loading";
 import Hls from "hls.js";
-import CustomCard from "../components/CustomCard";
 import swal from "sweetalert";
 import { movieSearchInfo, movieStream } from "../../services/MovieSearchService";
 

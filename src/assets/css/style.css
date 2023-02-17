@@ -23,23 +23,24 @@ label {
 /* swal css custom */
 .swal-footer {
     text-align: center;
-    background-color: rgb(245, 248, 250);
+    /* background-color: rgb(245, 248, 250); */
+    background-color: transparent;
     margin-top: 32px;
-    border-top: 1px solid #E9EEF1;
+    /* border-top: 1px solid #E9EEF1; */
     overflow: hidden;
 }
 
 .swal-button {
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: red;
+    background-color: #dc3545;
     font-size: 12px;
     border: none;
     box-shadow: 1.5px 1.5px 5px gray;
 }
 
 .swal-button:hover {
-    background-color: orangered !important;
+    background-color: #b02634fc !important;
 }
 
 .card {
@@ -137,4 +138,66 @@ label {
     right: 0;
     padding-right: 50px;
     padding-bottom: 10px;
+}
+
+.sign {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sign .sign-form {
+    width: 500px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    box-shadow: 5px 5px 50px black;
+}
+
+.sign .sign-form form {
+    margin: 50% auto;
+    text-align: center;
+}
+
+.sign .sign-form form .sign-logo {
+    height: 100px;
+    margin-bottom: 50px;
+}
+
+.sign .sign-form form .form-control {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.sign .sign-form form .d-grid {
+    margin-top: 20px;
+}
+
+.sign .sign-form form .d-grid>.btn {
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.sign .sign-form p {
+    text-align: center;
+}
+
+.sign .sign-form p .sign-link {
+    margin-left: 10px;
+    text-decoration: none;
+    color: red;
+}
+
+.icon {
+    margin: 5px;
+    cursor: pointer;
 }

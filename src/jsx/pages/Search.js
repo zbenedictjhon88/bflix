@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import { movieSearch } from '../../services/MovieSearchService';
-import { search } from '../../services/SearchService';
 import CustomBanner from '../components/CustomBanner';
 import CustomCard from '../components/CustomCard';
 import Loading from './Loading';

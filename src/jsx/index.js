@@ -1,21 +1,27 @@
-import React, { useContext } from "react";
-import { Routes, Route } from "react-router-dom";
-
-import Header from '../jsx/layouts/Header';
-import SideBar from '../jsx/layouts/SideBar';
-import Footer from '../jsx/layouts/Footer';
+import React, { useContext, useEffect, useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Search from "./pages/Search";
-import Info from "./pages/Info";
-import Stream from "./pages/Stream";
 import NavBar from "./layouts/NavBar";
 import HInfo from "./pages/HInfo";
 import DInfo from "./pages/DInfo";
 import HStream from "./pages/HStream";
 import DStream from "./pages/DStream";
+import { authentication, signout } from "../services/AuthService";
+import SignIn from "./pages/SignIn";
+import { getCookie, removeCookie, setCookie } from "../services/UtilService";
 
 const Markup = (props) => {
+
+    const [isLogged, setLogged] = useState(authentication);
+
+    useEffect(() => {
+        // signout();
+        // removeCookie('isLogged');
+        // setCookie('isLogged', true);
+        console.log('authentication');
+    }, []);
 
     const routes = [
         { url: "", element: <Home /> },
@@ -24,10 +30,9 @@ const Markup = (props) => {
         { url: "dinfo/:type/:id", element: <DInfo /> },
         { url: "hstream/:episodeId/:type/:id", element: <HStream /> },
         { url: "dstream/:episodeId/:type/:id", element: <DStream /> },
-        // { url: "error-404", component: Error404 },
     ];
 
-    return (
+    let authenticated = (
         <>
             <NavBar />
             <div className='main'>
@@ -35,13 +40,31 @@ const Markup = (props) => {
                     {routes.map((data, i) => (
                         <Route
                             key={i}
-                            // exact={true}
+                            exact={true}
                             path={`/${data.url}`}
                             element={data.element}
                         />
                     ))}
+                    <Route
+                        path="*"
+                        element={<Navigate to="/" replace />}
+                    />
                 </Routes>
             </div>
+        </>
+    );
+
+    let unauthenticate = (
+        <Routes>
+            <Route exact={true} path='/login' element={<SignIn />} />
+        </Routes>
+    );
+
+    return (
+        <>
+            {authenticated}
+            {/* {isLogged ? 'true' : 'false'} */}
+            {/* {isLogged ? authenticated : unauthenticate} */}
         </>
     );
 }
