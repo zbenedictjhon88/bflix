@@ -15,6 +15,7 @@ import { getCookie, removeCookie, setCookie } from "../services/UtilService";
 import About from "./pages/About";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import Ad from "./components/Ad";
 
 const Markup = (props) => {
 
@@ -52,6 +53,7 @@ const Markup = (props) => {
                 </Routes>
             </div>
             <Footer />
+            <Ad />
         </>
     );
 
