@@ -259,3 +259,8 @@ label {
     text-decoration: none;
     color: white;
 }
+
+.default, .default:hover {
+    background-color: white !important;
+    color: #dc3545;
+}

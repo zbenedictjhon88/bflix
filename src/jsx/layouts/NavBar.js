@@ -1,14 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsSearch, BsBoxArrowRight, BsPerson } from "react-icons/bs";
 import swal from "sweetalert";
 import { signOutGoogleAccount } from "../../services/AuthService";
 import logo from '../../assets/images/bflix-logo.png';
+import { getCookie } from "../../services/UtilService";
+import CustomLink from "../components/CustomLink";
 
 function NavBar(props) {
 
     const navigate = useNavigate();
     const [search, setSearch] = useState('');
+    const [isUserVerified, setIsUserVerified] = useState(getCookie('isUserVerified'));
+
+    useEffect(() => {
+        // setIsUserVerified(Boolean.parse());
+    }, []);
 
     const find = (e) => {
         swal("SEARCH", {
@@ -25,6 +32,11 @@ function NavBar(props) {
     const exit = (e) => {
         e.preventDefault();
         signOutGoogleAccount();
+    }
+
+    const userValidate = (e) => {
+        e.preventDefault();
+        alert('a');
     }
 
     return (
@@ -46,17 +58,17 @@ function NavBar(props) {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className='nav-link' to='/search/movie/1'>
+                            <Link className='nav-link' to={isUserVerified == 'true' ? '/search/movie/1' : '/guest'}>
                                 Movies
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className='nav-link' to='/search/tv show/1'>
+                            <Link className='nav-link' to={isUserVerified == 'true' ? '/search/tv show/1' : '/guest'}>
                                 TV Shows
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className='nav-link' to='/search/asian/1'>
+                            <Link className='nav-link' to={isUserVerified == 'true' ? '/search/asian/1' : '/guest'}>
                                 Asian Drama
                             </Link>
                         </li>
@@ -70,8 +82,8 @@ function NavBar(props) {
 
                 <div className="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                     <div className="d-flex">
-                        <BsSearch onClick={find} className="icon" title="Search" />
-                        <BsPerson className="icon" title="Profile" />
+                        {isUserVerified == 'true' ? <BsSearch onClick={find} className="icon" title="Search" /> : ''}
+                        {/* <BsPerson className="icon" title="Profile" /> */}
                         <BsBoxArrowRight onClick={exit} className="icon" title="Logout" />
                     </div>
                 </div>

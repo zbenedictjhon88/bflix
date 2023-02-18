@@ -11,6 +11,7 @@ import HStream from "./pages/HStream";
 import DStream from "./pages/DStream";
 import { authentication, signout } from "../services/AuthService";
 import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import { getCookie, removeCookie, setCookie } from "../services/UtilService";
 import About from "./pages/About";
 import Terms from "./pages/Terms";
@@ -30,7 +31,9 @@ const Markup = (props) => {
         { url: "dstream/:episodeId/:type/:id", element: <DStream /> },
         { url: "about", element: <About /> },
         { url: "user-agreement", element: <Terms /> },
-        { url: "privacy-policy", element: <Privacy /> }
+        { url: "privacy-policy", element: <Privacy /> },
+        { url: "guest", element: <SignIn guest={true} /> },
+        { url: "sign-up", element: <SignUp /> }
     ];
 
     let authenticated = (

@@ -2,7 +2,7 @@ import { async } from "@firebase/util";
 import { addDoc, collection, doc, getDocs, setDoc } from "firebase/firestore";
 import { db } from "./firestore";
 
-export const createUser = async (uid = null, email = null, pass = null, name = null, emailVerified = false, photoUrl = null) => {
+export const createUser = async (uid, name, email = null, pass = null, emailVerified = false, photoUrl = null, isAdsOn = true, isUserVerified = true) => {
     await addDoc(collection(db, 'users'), {
         uid: uid,
         email: email,
@@ -10,6 +10,8 @@ export const createUser = async (uid = null, email = null, pass = null, name = n
         name: name,
         emailVerified: emailVerified,
         photoUrl: photoUrl,
+        isAdsOn: isAdsOn,
+        isUserVerified: isUserVerified
     });
 }
 

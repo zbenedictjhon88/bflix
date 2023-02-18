@@ -1,6 +1,6 @@
 import bg from '../../assets/images/unauth-bg.jpg';
 import logo from '../../assets/images/bflix-logo.png';
-import { signInEmailPassword, signInGoogleAccount } from '../../services/AuthService';
+import { signInAsGuest, signInEmailPassword, signInGoogleAccount } from '../../services/AuthService';
 import { BsGoogle } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -31,14 +31,14 @@ function SignIn(props) {
 
         setErrors(errorObj);
         if (error) {
-            swal('Oops', 'Please log your credential. Thank You!', 'warning');
+            swal('Oops!', 'Incorrect username/email or password', 'warning');
             return;
         }
         console.log('tet');
         signInEmailPassword(email, password);
     }
 
-    function loginGoogleAccoun(e) {
+    function loginGoogleAccount(e) {
         e.preventDefault();
         signInGoogleAccount();
     }
@@ -65,16 +65,19 @@ function SignIn(props) {
                             placeholder="Type Your Password"
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <div className='d-grid sign-btn'>
-                            <button className="btn btn-danger btn-block">
+                        <div className='d-grid sign-btn text-center'>
+                            <button className="btn btn-danger">
                                 Sign In
                             </button>
-                            <button type='button' onClick={loginGoogleAccoun} className="btn btn-danger btn-block">
-                                <BsGoogle size={24} className="icon" />
-                                Sign In with Google
-                            </button>
+                            {!props.guest ?
+                                <button type='button' onClick={signInAsGuest} className="btn btn-danger default">
+                                    Sign In as Guest
+                                </button>
+                                : ''
+                            }
                         </div>
-
+                        <label>- OR -</label><br />
+                        <BsGoogle size={24} className="icon" onClick={loginGoogleAccount} />
                         <p>
                             Don't have an Account?
                             <Link to="/sign-up" className='sign-link'>
@@ -82,7 +85,7 @@ function SignIn(props) {
                             </Link>
                         </p>
 
-                        <p style={{marginTop: '5px'}}>
+                        <p style={{ marginTop: '5px' }}>
                             <Link to="/about" className='sign-link'>
                                 About
                             </Link>
