@@ -24,33 +24,30 @@ function Search(props) {
     }, [id, prevbtn, nextbtn]);
 
     function movieLoad(value) {
-        if (fhasNextPage) {
-            movieSearch(value, pageno, 'flixhq').then(res => {
-                if (res.length == 0) {
-                    //messageAlert();
-                    return false;
-                }
+        movieSearch(value, pageno, 'flixhq').then(res => {
+            // console.log(res);
+            if (res.length == 0) {
+                //messageAlert();
+                return false;
+            }
 
-                setFlixhq(res.results);
-                setFhasNextPage(res.hasNextPage)
-            }).catch(err => {
-                console.log(err)
-            });
-        }
+            setFlixhq(res.results);
+            setFhasNextPage(res.hasNextPage)
+        }).catch(err => {
+            console.log(err)
+        });
 
-        if (dhasNextPage) {
-            movieSearch(value, pageno, 'dramacool').then(res => {
-                if (res.length == 0) {
-                    //messageAlert();
-                    return false;
-                }
+        movieSearch(value, pageno, 'dramacool').then(res => {
+            if (res.length == 0) {
+                //messageAlert();
+                return false;
+            }
 
-                setDramacool(res.results);
-                setDhasNextPage(res.hasNextPage)
-            }).catch(err => {
-                console.log(err)
-            });
-        }
+            setDramacool(res.results);
+            setDhasNextPage(res.hasNextPage)
+        }).catch(err => {
+            console.log(err)
+        });
     }
 
     function prevbtn(e) {

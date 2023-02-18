@@ -53,7 +53,7 @@ const Markup = (props) => {
                 </Routes>
             </div>
             <Footer />
-            <Ad />
+            {/* <Ad /> */}
         </>
     );
 

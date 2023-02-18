@@ -21,7 +21,7 @@ function DStream(props) {
         streaming();
     }, [episodeId, type, id]);
 
-    function streaming(server = 'upcloud') {
+    function streaming(server = 'asianload') {
 
         movieSearchInfo(type, id, 'dramacool').then(v => {
             setVidInfo(v);
@@ -82,14 +82,6 @@ function DStream(props) {
                 {
                     closeOnClickOutside: false,
                     buttons: {
-                        upcloud: {
-                            text: "UPCLOUD",
-                            value: "upcloud",
-                        },
-                        vidcloud: {
-                            text: "VIDCLOUD",
-                            value: "vidcloud",
-                        },
                         mixdrop: {
                             text: "MIXDROP",
                             value: "mixdrop",
@@ -216,7 +208,7 @@ function DStream(props) {
                                 margin: '0',
                             }}
                             getInstance={(art) => {
-                                console.log(art);
+                                // console.log(art);
                             }}
                         />
                     </div>
