@@ -192,6 +192,11 @@ label {
     margin-bottom: 5px;
 }
 
+.sign .sign-form label {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
 .sign .sign-form p {
     margin-top: 50px;
     text-align: center;
