@@ -7,8 +7,8 @@ function CustomCard(props) {
                 <img src={props.image} />
             </Link>
             <div className="card-footer">
-                <p>{props.type}</p>
-                <p>{props.title}</p>
+                <span>{props.type}</span>
+                {/* <p>{props.title}</p> */}
             </div>
         </div>
     )

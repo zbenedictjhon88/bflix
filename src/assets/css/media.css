@@ -2,29 +2,6 @@
     .card {
         margin: 5px auto;
         padding: 0;
-        width: 180px;
-        height: 340px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        border: none;
-        /* background-color: black; */
-    }
-
-    .card img {
-        object-fit: cover;
-        height: 280px;
-        border-radius: 5px;
-        box-shadow: 1.5px 1.5px 10px gray;
-    }
-
-    .card .card-footer {
-        padding: 5px;
-    }
-
-    .card .card-footer p {
-        margin: 0;
-        font-size: 14px;
     }
 }
 
