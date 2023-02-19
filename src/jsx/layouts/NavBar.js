@@ -29,14 +29,9 @@ function NavBar(props) {
         });
     }
 
-    const exit = (e) => {
+    const login = (e) => {
         e.preventDefault();
-        signOutGoogleAccount();
-    }
-
-    const userValidate = (e) => {
-        e.preventDefault();
-        alert('a');
+        return navigate('sign-in');
     }
 
     return (
@@ -46,6 +41,7 @@ function NavBar(props) {
                 <Link className='navbar-brand' to='/'>
                     <img src={logo} height={50} />
                 </Link>
+
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -58,33 +54,27 @@ function NavBar(props) {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className='nav-link' to={isUserVerified == 'true' ? '/search/movie/1' : '/guest'}>
+                            <Link className='nav-link' to='/search/movie/1'>
                                 Movies
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className='nav-link' to={isUserVerified == 'true' ? '/search/tv show/1' : '/guest'}>
+                            <Link className='nav-link' to='/search/tv show/1'>
                                 TV Shows
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className='nav-link' to={isUserVerified == 'true' ? '/search/asian/1' : '/guest'}>
+                            <Link className='nav-link' to='/search/asian drama/1'>
                                 Asian Drama
                             </Link>
                         </li>
                     </ul>
-
-                    {/* <form class="d-flex">
-                        <input class="form-control me-2" type="text" placeholder="Search" onChange={e => setSearch(e.target.value)} />
-                        <button class="btn btn-primary" type="button" onClick={find}>Search</button>
-                    </form> */}
                 </div>
 
                 <div className="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                     <div className="d-flex">
-                        {isUserVerified == 'true' ? <BsSearch onClick={find} className="icon" title="Search" /> : ''}
-                        {/* <BsPerson className="icon" title="Profile" /> */}
-                        <BsBoxArrowRight onClick={exit} className="icon" title="Logout" />
+                        <BsSearch onClick={find} className="icon" title="Search" />
+                        {/* <BsPerson className="icon" title="Profile" onClick={login} /> */}
                     </div>
                 </div>
             </div>

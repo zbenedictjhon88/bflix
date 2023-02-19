@@ -25,9 +25,7 @@ function Search(props) {
 
     function movieLoad(value) {
         movieSearch(value, pageno, 'flixhq').then(res => {
-            // console.log(res);
             if (res.length == 0) {
-                //messageAlert();
                 return false;
             }
 
@@ -77,17 +75,20 @@ function Search(props) {
                     <div className='col-lg-12'>
                         <h3 className='header-title'>Search: {id}</h3>
                     </div>
+
                     {flixhq.map((data, i) => {
                         return (
                             <CustomCard key={i} url={'/hinfo/' + data.id + '/' + pageno} image={data.image} title={data.title} type={data.type} />
                         );
                     })}
+
                     {dramacool.map((data, i) => {
                         return (
                             <CustomCard key={i} url={'/dinfo/' + data.id + '/' + pageno} image={data.image} title={data.title} type='Asian Drama' />
                         );
                     })}
-                    <div className='col-lg-12 text-center' style={{ marginTop: '50px', marginBottom: '50px' }}>
+
+                    {/* <div className='col-lg-12 text-center' style={{ marginTop: '50px', marginBottom: '50px' }}>
                         <button onClick={prevbtn} className='btn btn-default'>
                             <BsChevronDoubleLeft />
                         </button>
@@ -95,7 +96,7 @@ function Search(props) {
                         <button onClick={nextbtn} className='btn btn-default'>
                             <BsChevronDoubleRight />
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>
